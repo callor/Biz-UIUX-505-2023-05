@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>나의친구들 - 로그인</title>
+    <style>
+      h1 {
+        /* h1 tag box 의 배경색을 yellow  */
+        background-color: yellow;
+        /* h1 tag 의 Text Content 의 색(글자색)을 blue */
+        color: blue;
+        /* 화면에 보여지는 Text(글자)의 크기를 지정하기 */
+        font-size: 10pt;
+        font-style: italic;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* input tag 에 공통으로 적용할 style */
+      /* input.color = blue */
+      input {
+        color: blue;
+
+        /* padding 은 tag 내부에 여백을 추가하여 부풀리기 */
+        padding: 10px;
+        /* margin 은 tag 외부에 여백을 추가하여 
+        다른 tag 와 간격 부풀리기 */
+        margin: 5px;
+      }
+
+      /* input tag 중에 id(#)가 email 인 친구 */
+      /* input#email.color = red */
+      input#email {
+        /* id 가 email 인 input tag를 만나면
+        이미 input tag 의 color 가 blue 이지만 무시되고
+        다시 red 로 설정된다
+        */
+        color: red;
+      }
+      /* input tag 중에 id(#)가 password 인 친구 */
+      input#password {
+        color: greenyellow;
+      }
+
+      div {
+        /* tag 의 태두리를 설정하는 속성 */
+        /* 
+        1px : 1px 두께의 선 
+        soid : 실선
+        green : 선의 색깔
+        */
+        margin: 5px;
+        padding: 5px;
+
+        /* box tag 의 내부에 포함된 Content 들을 가운데 정렬 */
+        text-align: center;
+      }
+
+      button {
+        width: 200px;
+        padding: 5px;
+        border: none;
+      }
+
+      /* button tag 중에 class 속성이 login 인 친구 */
+      button.login {
+        background-color: blue;
+        color: white;
+      }
+      button.naver_login {
+        background-color: green;
+        color: yellow;
+      }
+
+      a {
+        /*
+        보통 a tag 의 글자 장식(라인모양)을  변경할때
+        a tag 의 기본 밑줄 제거하기
+        */
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>나의 친구들 로그인</h1>
+    <div class="email">
+      <input
+        id="email"
+        placeholder="이메일을 입력해 주세요"
+      />
+    </div>
+    <div class="password">
+      <input
+        id="password"
+        placeholder="비밀번호를 입력해 주세요"
+      />
+    </div>
+    <div>
+      <button class="login">로그인</button>
+    </div>
+    <div>
+      <button class="naver_login">
+        네이버 로그인
+      </button>
+    </div>
+    <div>
+      <a href="join.html">회원가입</a> |
+      <a href="loss_id.html">아이디,비번찾기</a>
+    </div>
+  </body>
+</html>
