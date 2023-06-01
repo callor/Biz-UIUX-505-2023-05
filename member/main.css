@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 /*
 header tag 의 background-color 와 color 속성을 변경했더니
 h1 tag, p tag 로 구성된 Text 들의 속성이 같이 변경되었다
