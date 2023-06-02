@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>CSS 활용하기</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        border: 1px solid blue;
+        margin: 10px;
+      }
+
+      div#button {
+        /* top과 bottom 은 16px 로, left 와 right 는 12px 로 설정 */
+        padding: 16px 12px;
+      }
+
+      button {
+        border: none;
+        padding: 12px 16px;
+        border-radius: 10px;
+      }
+
+      div#nav {
+        /* top:16px,  right:12px, bottom:16px, left: 20px */
+        padding: 16px 12px 16px 20px;
+        background-color: blue;
+        color: white;
+      }
+      /* 
+      tag 에 유일한 식별자인 id 을 추가하고
+      id 에 대하여 selec 를 실행하고 속성 부여하기
+
+      id 를 기준으로 Select 를 하였을 경우
+      tag 의 id 를 변경하는 경우 지정한 속성이 무력화 될수 있다
+
+      */
+      button#save {
+        background-color: blue;
+        color: white;
+      }
+
+      /*
+      tag 의 index 를 사용하여 select 하기
+
+      tag id, class 속성에 관계없이 코딩된 순서 index 를
+      select  하여 속성 부여하기
+
+      이때는 id, class 를 변경하더라도 지정된 속성이 유지 될수 있다
+      하지만, index 가 바뀌면 원하지 않는 속성이 지정되기도 한다
+      */
+      div#button button:nth-of-type(1) {
+        background-color: green;
+        color: white;
+      }
+
+      /* 모든 a tag 에 공통 속성 적용하기 */
+      /* 밑줄 제거, 컬러는  부모 tag 의 컬러 상속받기 */
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* id 가 nav 인 div 가 감싸고 있는 a tag */
+      /* 
+      a tag 는 다양한 곳에서 많이 사용이 된다. a tag 에 대하여
+      공통으로 속성을 지정하면 현재 파일의 모든 a tag 가 함께 변경된다
+      여기는 단순히 nav box 에 포함된 a tag 에만 적용하기 위한 조치
+      */
+      div#nav a {
+        display: inline-block;
+        padding: 12px 16px;
+        border: 1px solid green;
+      }
+
+      /* 
+      tag 를 지정하지 않고 class(학급, 그룹)를 select 하여
+      속성 지정하기
+      현재 파일(Page)에 있는 모든 tag 를 검색하여 
+      class 가 bbs 로 지정된 곳이 있으면
+      공통으로 속성을 부여한다
+      tag 지정없이 class 를 select 할때는 매우 주의를 해라
+      */
+      .bbs {
+        background-color: red;
+        color: white;
+      }
+
+      /* bbs 클래스가 부착된 a tag 에 속성 지정 */
+      a.bbs {
+        font-style: italic;
+      }
+
+      /* CSS 를 사용하여 interactive(활동적인) 효과주기 */
+      /* button tag 에 마우스를 올렸을때 */
+      button:hover {
+        background-color: #777;
+        color: black;
+      }
+
+      div#button button:hover {
+        background-color: #777;
+        color: black;
+      }
+
+      div#nav a:hover {
+        /* 
+        x, y 방향으로 2px 만큼 벗어나게 3px 만큼 blure 주기
+        색상은 검정색인데 투명도를 70%(0.7)
+        */
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      div#menu {
+        background-color: green;
+        color: white;
+      }
+
+      div#menu a {
+        display: inline-block;
+        padding: 12px 16px 6px 16px;
+        margin: 10px 10px 14px 10px;
+        /* transparent : 투명색 */
+        border: 2px solid transparent;
+        transition-duration: 0.8s;
+      }
+
+      div#menu a:hover {
+        border-bottom: 2px solid yellow;
+      }
+
+      div#circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: blue;
+        color: white;
+        text-align: center;
+      }
+
+      div#button button:nth-of-type(4) {
+        background-image: url("image.jpg");
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS 활용하기</h1>
+    <div id="button">
+      <button id="view">내용보기</button>
+      <button id="save">저장하기</button>
+      <button id="list" class="bbs">리스트보기</button>
+      <button id="cancel">취소하기</button>
+    </div>
+    <div id="nav">
+      <a href="" class="home">Home</a>
+      <a href="" class="bbs">자유게시판</a>
+      <a href="" class="login">로그인</a>
+    </div>
+    <div id="menu">
+      <a href="">Home</a>
+      <a href="">자유게시판</a>
+      <a href="">로그인</a>
+    </div>
+    <div id="circle">안녕</div>
+  </body>
+</html>
