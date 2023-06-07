@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>flex box</title>
+    <style>
+      section {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        border: 2px solid blue;
+        text-align: center;
+
+        /* flex-item 의 가로 세로 정렬하기 */
+        justify-content: center;
+        align-items: center;
+      }
+
+      div {
+        border: 1px solid red;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>안녕하세요</div>
+    </section>
+  </body>
+</html>

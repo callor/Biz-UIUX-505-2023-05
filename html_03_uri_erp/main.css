@@ -1,0 +1,83 @@
+/* css 초기화 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* a tag 초기화 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+header, nav, footer 
+*/
+
+header {
+  background-color: rgb(52, 152, 219);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  background-color: rgb(94, 94, 94);
+  color: white;
+  display: flex;
+}
+
+nav a {
+  padding: 12px 16px 8px 16px;
+  margin: 7px 7px 5px 7px;
+  border-bottom: 2px solid transparent;
+  transition: 0.7s;
+}
+
+nav a:first-of-type {
+  margin-left: 10px;
+}
+nav a:last-of-type {
+  margin-right: 10px;
+}
+
+nav a:nth-of-type(4) {
+  margin-left: auto;
+}
+
+nav a:nth-of-type(6) {
+  margin-left: auto;
+}
+
+nav a:hover {
+  border-bottom: 2px solid rgb(255, 230, 0);
+}
+
+section {
+  display: flex;
+}
+
+article {
+  flex: 1;
+  margin: 5px;
+  border: 1px solid green;
+  height: 500px;
+}
+
+/* class 가 dash-title 인 p tag */
+p.dash-title {
+  color: blue;
+  font-weight: bold;
+  transition: 0.7s;
+  padding: 5px;
+}
+p.dash-title:hover {
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+footer {
+  background-color: rgb(224, 224, 224);
+  text-align: center;
+  padding: 0.7rem;
+}
