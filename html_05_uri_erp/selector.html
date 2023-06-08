@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Selector</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      section {
+        width: 100%;
+        height: 100%;
+        border: 3px solid green;
+        padding: 10px;
+      }
+
+      div {
+        width: 50%;
+        height: 15%;
+        margin: 10px auto;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="main" id="div1">div</div>
+      <div class="main" id="div2">div</div>
+      <div class="main" id="div3">div</div>
+      <div class="main" id="div4">div</div>
+      <div class="main" id="div5">div</div>
+    </section>
+  </body>
+  <script>
+    /**
+     * div1 이라는 변수를 선언하고,
+     * HTML 문서(document)에서 id 가 div1(#div)인 Selector를
+     * 찾아서 그 객체정보를 div1 변수에 담아달라
+     * JavaScript 에서 HTML 문서의 객체를 사용하기 위한 선언(준비)
+     */
+    const div1 = document.querySelector("#div1");
+    div1.style.backgroundColor = "yellow";
+
+    function textChange() {}
+    /*
+     함수 선언
+     함수에 작성된 코드는 즉시 실행되지 않는다
+     */
+    const backgroundChange = function () {
+      const div2 = document.querySelector("#div2");
+      div2.style.backgroundColor = "green";
+    };
+    // 함수에 작성된 코드를 실행하라
+    // backgroundChange();
+
+    /*
+    div1 객체(변수)의 addEventListener() 함수를 호출하면서
+    "click" 이라는 문자열 값과,
+    backgroundChange 라는 함수형 변수를 매개변수로 전달하기
+    */
+
+    /*
+     event hander 등록 코드
+     만약 누군가 div1(#div1) box 를 클릭하거든
+     backgroundChange 함수를 실행해 달라 라는 예약
+     div1 를 클릭하지 않으면 이 코드는 절대 실행 되지 않는다
+    */
+    div1.addEventListener("click", backgroundChange);
+
+    // ES5+(ES6) 에서 새롭게 도입된 함수 선언문
+    // Arrow(화살표) 함수
+    // function 키워드를 제거하고 => 기호가 새로 도입되었다
+
+    // let : 일반적인 정수, 실수, 문자열 등등의 변수를 선한하는 키워드
+    let count = 0;
+
+    // const : 객체(변수), 함수(형 변수) 등을 선언하는 키워드
+    //      java 에서 변수 선언문에 final 을 부착한 것과 같다
+    // final static String
+    // private final List<Student> stList = new ArrayList();
+    const countUp = () => {
+      div2.innerText = ++count;
+    };
+    // div2(#div2) 를 클릭하면 countUp 함수를 실행하라
+    // countUp 함수는 count 변수값을 1 증가(++) 시키고
+    // count 변수의 값을 div box 내부 Text에 보여라
+    div2.addEventListener("click", countUp);
+
+    // 현재 HTML 문에 있는 모든 div tag 들을 가져와서 divs 변수에 담아
+    // 이때, divs 는 배열이다
+    const divs = document.querySelectorAll("div");
+    divs[2].style.backgroundColor = "red";
+
+    for (let index = 0; index < divs.length; index++) {
+      divs[index].innerText = index + 1;
+    }
+    const divClass = document.querySelectorAll(".main");
+    const num1Member = document.querySelectorAll(".main")[1];
+  </script>
+</html>
