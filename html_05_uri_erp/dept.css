@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+html doc object 는 기본 높이가 0이다
+높이를 고려한 화면 layout 을 만들려면 
+먼저 html doc object 높이를 100%로 설정한다
+여기에서 100% 라는 것은 Browser 의 view 영역 높이와
+같게 맞추라는 의미이다
+
+그런데 html doc object 에 적용하는 100% 의미가
+브라우저(PC, Table, 스마트폰)마다 조금씩 달라서
+화면 Layout 이 무너지는 경우가 있다
+css2 이상에서는 html doc object 에 height 와 width 를
+vh(view port height), vw(view port width) 단위를 사용하도록
+권장한다
+view port 란 디바이스에서 실제로 content 를 보여주는 영역이다
+*/
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* html doc object 를 기준으로 body 의 size 설정 */
+body {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header.dept {
+  padding: 1.5rem;
+  background-color: green;
+}
+
+/*
+현재 dept_main.html 의 nav ul li tag 에
+margin-left 를 부여하여 오른쪽 정렬을 시도했다
+그런데, 원하는대로 속성이 적용되지 않았다
+원인을 봤더니 main.css 에서 nav tag 에 flex 를 적용한 것이
+dept_main.html 의 nav 속성에 영향을 미친 것이다
+따라서 nav 의 display 속성을 원래 속성인 block 으로
+만들어 주었다
+*/
+nav.dept {
+  background-color: black;
+  display: block;
+}
+
+nav.dept ul {
+  margin-left: 30px;
+  /* ul tag 의 머릿글 모양, disc, circle, square, none */
+  /* nav 용도로 사용할때는 머릿글 모양을 보통 none 으로 한다 */
+  list-style: none;
+  display: flex;
+}
+
+nav.dept li {
+  padding: 12px 16px;
+  transition: 0.7s;
+}
+
+nav.dept ul li:nth-of-type(6) {
+  margin-left: auto;
+}
+
+nav.dept li:hover {
+  cursor: pointer;
+  background-color: #777;
+}
+
+section.dept {
+  border: 1px solid blue;
+  flex: 1;
+  margin: 3px;
+  display: block;
+}
+
+section.dept:nth-of-type(1) {
+  overflow: auto;
+}
+
+/*
+block tag 의 overflow 속성
+box 내부의 content 가 box 의 크기보다 클 경우
+content 를 어떻게 표현할 것인가를 결정하는 속성
+hidden : content 를 box 의 크기만큼만 남기고 잘라버리기
+scroll : box 에 scroll bar 를 (무조건)표현하고, 
+        넘치면 scroll 를 통하여
+        content 를 볼수 있게 하기
+
+auto : content 가 box 보다 작으면 그냥 평범하게 표현
+        content 가 box 보다 크면 자동으로 scroll bar 가 나타나도록 하여
+        scroll 하면서 content 를 볼수 있게 하기
+*/
+section.dept:nth-of-type(2) {
+  overflow: auto;
+}
+section.dept:nth-of-type(3) {
+  overflow: hidden;
+}
+section.dept article {
+  overflow: auto;
+  width: 60%;
+}
+
+article.dept {
+  padding: 12px 16px;
+  /* box 내부에 포함된 box 를 가로방향 중앙정렬하기 */
+  margin: 50px auto;
+}
+
+/* label input box 를 감싸고 있는 div */
+article.dept div {
+  display: flex;
+  padding: 0 20px;
+}
+
+/* 
+article.dept box 가 감싸고 있는
+label과 input 를 동시에 select
+*/
+article.dept label,
+article.dept input {
+  margin: 3px;
+  padding: 8px;
+}
+
+article.dept label {
+  /* width: 30%; */
+  flex: 1;
+  text-align: right;
+  color: rgb(97, 97, 181);
+  font-weight: bold;
+}
+
+article.dept input {
+  /* width: 60%; */
+  flex: 2;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #aaa;
+}
+
+article.dept input:hover {
+  background-color: #ddd;
+}
+
+article.dept input:focus {
+  background-color: #eee;
+}
+
+div.button_box label {
+  flex: 1;
+}
+div.button_box div {
+  flex: 2;
+  text-align: left;
+  margin: 3px 0;
+  padding: 8px 0;
+}
+
+div.button_box button {
+  padding: 8px 16px;
+  margin: 8px 8px 8px 0;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+}
+div.button_box button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+div.button_box button:nth-of-type(1) {
+  background-color: blue;
+  color: white;
+}
+div.button_box button:nth-of-type(2) {
+  background-color: green;
+  color: white;
+}
+div.button_box button:nth-of-type(3) {
+  background-color: black;
+  color: white;
+}
