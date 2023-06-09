@@ -31,3 +31,5 @@
 - `<div></div>`, `<p></p>`
 - box tag 는 기본 width 가 화면의 가로 전체 width 와 같다
 - box tag 는 기본형식이 `세로방향`으로 나열된다.
+
+![Use Case](회원가입_로그인.drawio.png)
