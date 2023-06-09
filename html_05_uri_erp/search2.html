@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>검색하기</title>
+  </head>
+  <body>
+    <h1>나의 검색엔진</h1>
+    <form
+      id="naver"
+      action="https://search.naver.com/search.naver"
+      target="_new"
+    >
+      <label>네이버 검색</label>
+      <input name="query" placeholder="검색어를 입력해 주세요" />
+      <button type="button">검색하기</button>
+    </form>
+
+    <form
+      id="daum"
+      action="https://search.daum.net/search"
+      target="_new"
+    >
+      <label>다음 검색</label>
+      <input name="q" placeholder="검색어를 입력해 주세요" />
+      <button type="button">검색하기</button>
+    </form>
+
+    <form
+      id="google"
+      action="https://www.google.com/search"
+      target="_new"
+    >
+      <label>구글 검색</label>
+      <input name="q" placeholder="검색어를 입력해 주세요" />
+      <button type="button">검색하기</button>
+    </form>
+  </body>
+  <script>
+    const naver = document.querySelector("form#naver");
+    const daum = document.querySelector("form#daum");
+    const google = document.querySelector("form#google");
+
+    // form#naver 가 감싸고 있는 button
+    const naver_button = naver.querySelector("button");
+    const daum_button = daum.querySelector("button");
+    const google_button = google.querySelector("button");
+
+    naver_button.addEventListener("click", () => {
+      const text = naver.querySelector("input").value;
+      if (!text) {
+        alert("검색어를 입력하세요");
+        naver.querySelector("input").focus();
+        return false;
+      }
+      naver.submit();
+    });
+
+    daum_button.addEventListener("click");
+    google_button.addEventListener("click");
+  </script>
+</html>

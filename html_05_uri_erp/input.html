@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Input 실습</h1>
+    <div>
+      <input
+        type="text"
+        id="s_name"
+        placeholder="이름을 입력하세요"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        id="s_tel"
+        placeholder="전화번호를 입력하세요"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        id="s_addr"
+        placeholder="주소를 입력하세요"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        id="s_grade"
+        placeholder="학년을 입력하세요"
+      />
+    </div>
+
+    <div><button id="btn_save">저장</button></div>
+  </body>
+  <script>
+    // HTML DOM 요소를 객체변수로 만들기
+    const s_name = document.querySelector("#s_name");
+    const s_tel = document.querySelector("#s_tel");
+    const s_addr = document.querySelector("#s_addr");
+
+    const s_grade = document.querySelector("#s_grade");
+
+    const btn_save = document.querySelector("#btn_save");
+
+    // s_name.value = "홍길동";
+    const btnSaveOnClick = () => {
+      // #s_name id 가 부착된(s_name) input box 에 입력된
+      // text 를 변수에 보관하기
+      const sNameText = s_name.value;
+      const sTelText = s_tel.value;
+      const sAddrText = s_addr.value;
+      const sGradeText = s_grade.value;
+
+      if (sNameText === "") {
+        alert("이름은 반드시 입력해야 합니다");
+        s_name.focus();
+        return false;
+      }
+      /*
+       만약 sTelText 변수에 저장된 값이 
+            ""(아무것도 입력하지 않은 상태),
+            null, undefined 이면 if 에서 NOT(!) 연산자를 사용하여
+            판별 할수 있다
+            010-1111-1111
+            010-11111-111111
+            callor@callor.com
+            aa.callor@gmail.com
+       */
+      if (!sTelText) {
+        alert("전화번호는 반드시 입력해야 합니다");
+        s_tel.focus();
+        return false;
+      }
+      if (!sAddrText) {
+        alert("주소는 반드시 입력해야 합니다");
+        s_addr.focus();
+        return false;
+      }
+
+      if (!sGradeText) {
+        alert("학년은 반드시 입력해야 합니다");
+        s_grade.focus();
+        return false;
+      }
+      // Text(문자열)형 숫자를 사칙연산이 가능한 숫자형 데이터로 변환
+      // Number(문자열) : parseInt(문자열)
+      const sGradeInt = Number(sGradeText);
+      if (sGradeInt < 1 || sGradeInt > 4) {
+        alert("학년은 1 ~ 4까지 입력하세요");
+        s_grade.focus();
+        return false;
+      }
+
+      // 서버로 데이터를 보내는 코드
+    };
+
+    // 저장 버튼이 클릭되면 btnSaveOnClick 함수를 실행하여 달라
+    // 라는 예약 : Event Handler 등록 이라고 한다
+    btn_save.addEventListener("click", btnSaveOnClick);
+  </script>
+</html>
