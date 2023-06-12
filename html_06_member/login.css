@@ -38,6 +38,9 @@ body {
 
   border-radius: 20px;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+
+  animation-name: login_box_top_down;
+  animation-duration: 1s;
 }
 
 #login_form h2 {
@@ -84,4 +87,34 @@ body {
 
 #login_form button:hover {
   background-color: #2ecc71;
+}
+
+/*
+CSS3 에서 시작된 CSS 를 이용한 애니메이션 구현
+@keyframes 로 구현한 CSS 애니메이션은
+가급적 CSS 코드의 끝에 두자
+*/
+@keyframes login_box_top_down {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+/*
+오래된 브라우저의 호환성을 위한 키워드
+*/
+@-webkit-keyframes login_box_top_down {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
 }
