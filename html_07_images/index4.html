@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input_seq = document.querySelector("#seq");
+        const input_userid = document.querySelector("#userid");
+        const input_title = document.querySelector("#title");
+        const input_complete = document.querySelector("#complete");
+
+        // keydown : 키가 눌려있는 동안
+        // keypress : 키보드로 입력하는 순간 발생
+        input_seq?.addEventListener("keypress", (e) => {
+          const keyCode = e.keyCode;
+          // const text = input_seq.value
+
+          // input box 에 값을 입력하는 중에 Enter 를 누르면
+          if (keyCode === 13) {
+            // input box 에 입력된 text 를 alert 하라
+            const text = e.currentTarget.value;
+            // alert(text);
+            fetch(
+              `https://jsonplaceholder.typicode.com/todos/${text}`
+            )
+              .then((response) => response.json())
+              .then((json) => {
+                input_seq.value = json.id;
+                input_userid.value = json.userId;
+                input_title.value = json.title;
+                // checkbox type 의 input 은
+                // checked 속성을 true로 하면 check 표시가 된다
+                input_complete.checked = json.completed;
+              });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="">SEQ</label> <input type="number" id="seq" />
+    </div>
+    <div>
+      <label for="">USER ID</label> <input type="text" id="userid" />
+    </div>
+    <div>
+      <label for="">제목</label> <input type="text" id="title" />
+    </div>
+    <div>
+      <label for="">완료</label>
+      <input type="checkbox" id="complete" />
+    </div>
+  </body>
+</html>
