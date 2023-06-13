@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Images</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100vh;
+        width: 100vw;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      div {
+        height: 30%;
+        border: 2px solid green;
+        overflow: hidden;
+      }
+
+      div:nth-of-type(1) {
+        overflow: visible;
+        overflow: hidden;
+      }
+
+      /*
+      float 속성
+      이미지와 text 를 어울리도록 만들기위한 속성으로 시작되었다
+
+      div 와 같은 box tag 들을 가로방향으로 배치할때 
+      여러가지 어려움 있었다
+      트릭으로 div box 에 float 속성을 부여하여 가로로 배치하는 layout 이
+      한때 유행했다
+      div box 에 float 속성을 부여하면 여러가지 이슈가 발생하고
+      화면 layout 구현에 많은 어려움이 있었다.
+      이러한 문제를 해결하기 위하여 display:flex 속성, display:grid 속성이
+      만들어지고, 지금은 div 에 float 속성을 부여한 방식이 사용되지 않는다
+
+      */
+      div:nth-of-type(1) img {
+        /* 이미지와 text 를 어울리도록 만들기 위한 속성 */
+        float: right;
+        float: left;
+        margin: 10px;
+      }
+
+      div:nth-of-type(2) img {
+        border-radius: 50%;
+        /* offset-x, offset-y, blur,spread, 색상 */
+        box-shadow: 5px 5px 5px 3px rgba(255, 0, 0, 0.8);
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="./images/image1.jpg" height="40%" alt="처음이미지" />
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Molestias accusamus optio recusandae quae! Doloremque, culpa
+        libero nemo provident, maiores neque repellendus praesentium
+        dignissimos quibusdam aut ex asperiores veritatis consequuntur
+        nostrum! Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Molestias accusamus optio recusandae quae! Doloremque,
+        culpa libero nemo provident, maiores neque repellendus
+        praesentium dignissimos quibusdam aut ex asperiores veritatis
+        consequuntur nostrum! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias accusamus optio recusandae quae!
+        Doloremque, culpa libero nemo provident, maiores neque
+        repellendus praesentium dignissimos quibusdam aut ex
+        asperiores veritatis consequuntur nostrum!
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Molestias accusamus optio recusandae quae! Doloremque, culpa
+        libero nemo provident, maiores neque repellendus praesentium
+        dignissimos quibusdam aut ex asperiores veritatis consequuntur
+        nostrum! Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Molestias accusamus optio recusandae quae! Doloremque,
+        culpa libero nemo provident, maiores neque repellendus
+        praesentium dignissimos quibusdam aut ex asperiores veritatis
+        consequuntur nostrum! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias accusamus optio recusandae quae!
+        Doloremque, culpa libero nemo provident, maiores neque
+        repellendus praesentium dignissimos quibusdam aut ex
+        asperiores veritatis consequuntur nostrum!
+      </p>
+    </div>
+    <div>
+      <img
+        src="./images/image2.jpg"
+        width="100px"
+        height="100px"
+        alt="나의이미지"
+      />
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Molestias accusamus optio recusandae quae! Doloremque, culpa
+        libero nemo provident, maiores neque repellendus praesentium
+        dignissimos quibusdam aut ex asperiores veritatis consequuntur
+        nostrum! Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Molestias accusamus optio recusandae quae! Doloremque,
+        culpa libero nemo provident, maiores neque repellendus
+        praesentium dignissimos quibusdam aut ex asperiores veritatis
+        consequuntur nostrum! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias accusamus optio recusandae quae!
+        Doloremque, culpa libero nemo provident, maiores neque
+        repellendus praesentium dignissimos quibusdam aut ex
+        asperiores veritatis consequuntur nostrum!
+      </p>
+    </div>
+    <div>
+      <img src="./images/image3.jpg" width="50%" alt="환상이미지" />
+    </div>
+  </body>
+</html>

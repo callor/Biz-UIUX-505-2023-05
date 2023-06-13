@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      div {
+        height: 100%;
+        width: 100%;
+        border: 2px solid blue;
+      }
+      /* 
+      parallax 효과 만들기 
+      background-image 와 background-attatchment 속성을 적절하게
+      배치하여 이미지 스크롤에 특수 효과를 부여하는 것
+
+      나누어진 페이지를 스크롤 할때 뒷 배경을 
+      고정시켜 움직이지 않게 하는 것
+      세로 스크롤을 실행하면 
+      다음 페이지가 마치 현재 페이지를 덮는 것처럼
+      보이게 하는 것
+
+      */
+      div:nth-of-type(1) {
+        background-image: url("./images/image1.jpg");
+        /* 배경이미지를 box 의 height, width 의 100% 로 채우기 */
+        background-size: cover;
+        /* image size 가 box 보다 클때 어떤부분을 기준으로 채울 것인가 */
+        background-position: center center;
+
+        /* css2 에서 css3 로 진행하면서 기능이 강화된 속성 */
+        background-attachment: fixed;
+      }
+      div:nth-of-type(2) {
+        background-image: url("./images/image2.jpg");
+        /* 배경이미지를 box 에 가득채우기 */
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      div:nth-of-type(3) {
+        background-image: url("./images/image1.jpg");
+        /* 배경이미지를 box 의 height, width 의 100% 로 채우기 */
+        background-size: cover;
+        /* image size 가 box 보다 클때 어떤부분을 기준으로 채울 것인가 */
+        background-position: center center;
+
+        /* css2 에서 css3 로 진행하면서 기능이 강화된 속성 */
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>
