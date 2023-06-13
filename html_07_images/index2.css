@@ -25,10 +25,12 @@ header {
     2rem 은 html 에 설정된 font-size 의 2배 만큼의 크기
     */
   padding: 2rem;
+  height: 50%;
   background-image: url("./images/image1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: yellow;
   text-shadow: 2px 2px 2px black;
   text-align: center;
