@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* 전체 Image 중에서 현재 보이는 창(window) */
+      /* overflow 를 hidden 으로 설정하여 보이는 영역을 제한 */
+      div.image_ticker {
+        width: 100px;
+        height: 100px;
+        margin: 150px auto;
+        overflow: hidden;
+      }
+
+      /* 
+      마우스가 image_ticker 에 hover 되면
+      image_box 의 속성을 변경하라
+      */
+      div.image_ticker:hover div.image_box {
+        animation-play-state: paused;
+      }
+
+      /* image list 가 담긴 box */
+      /* 
+      image 들이 포함되어 
+      heigth : image 의 height 와 같은 크기
+      width : image 의 width * 이미지 개수
+      */
+      div.image_box {
+        display: flex;
+        animation: image_slide 5s linear infinite;
+      }
+
+      /* 이미지 1개의 속성 */
+      div.image_box img {
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      /* 
+      ani 시작(0%) : x 축으로 현재 위치(translateX(0))
+      ani 종료(100%) : x 축으로 이미지의 width * 개수 만큼 - 이동
+      */
+      @keyframes image_slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-500px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image_ticker">
+      <div class="image_box">
+        <img src="./images/image1.jpg" />
+        <img src="./images/image2.jpg" />
+        <img src="./images/image3.jpg" />
+        <img src="./images/image4.jpg" />
+        <img src="./images/image5.jpg" />
+
+        <img src="./images/image1.jpg" />
+        <img src="./images/image2.jpg" />
+        <img src="./images/image3.jpg" />
+        <img src="./images/image4.jpg" />
+        <img src="./images/image5.jpg" />
+      </div>
+    </div>
+  </body>
+</html>
