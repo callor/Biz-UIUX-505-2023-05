@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+
+div.main_box {
+  width: 800px;
+  margin: 10rem auto;
+  position: relative;
+}
+
+img.image_slides {
+  width: 100%;
+}
+
+div.controller_box {
+  width: 100%;
+  /* controller_box 가 main_box 의 하단에 정렬 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  display: flex;
+  padding: 30px 20px;
+}
+
+div.button {
+  font-size: 20px;
+  font-weight: bole;
+  color: white;
+  /* text-shadow 는 현재 대부분의 browser 에서 지원한다 */
+  /* 
+  text-stroke 는 글자 border 의 색상과 두께를 지정하는 속성이다
+  아직은 실험적인 속성이어서 Browser 에서 완전하게 지원하지 않는다
+  -webkit 라는 prefix 를 붙여준다
+  현재는 chrom 에서만 정상 작동된다
+  */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+/* button badge tag 에 공통 속성 부여하기 */
+div.button,
+span.badge {
+  cursor: pointer;
+}
+
+div.button.right {
+  margin-left: auto;
+}
+
+div.button:hover {
+  text-shadow: 3px 3px 3px blue;
+  color: blue;
+}
+
+span.badge:hover {
+  background-color: #777;
+}
+
+div.badge_box {
+  margin-left: auto;
+  display: flex;
+}
+/*
+span tag
+태생이 inline(가장 inline 스러운 특징을 갖는다)
+inline 특성은 width, height, padding 완전 무시
+
+하지만 여기서는 badge_box 가 flex 가 되는 순간
+inline-block 성질을 갖게 된다.
+
+*/
+span.badge {
+  background-color: #000;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+span.badge.select {
+  background-color: yellowgreen;
+  width: 20px;
+  height: 20px;
+}

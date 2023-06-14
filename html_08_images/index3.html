@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div.image_container {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      img.image_slides {
+        width: 100%;
+        height: 100%;
+      }
+      div.controller_box {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+
+        display: flex;
+        padding: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      span.badge {
+        background-color: #000;
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image_container">
+      <img src="./images/image1.jpg" class="image_slides" />
+      <img src="./images/image2.jpg" class="image_slides" />
+      <img src="./images/image3.jpg" class="image_slides" />
+      <img src="./images/image4.jpg" class="image_slides" />
+      <img src="./images/image5.jpg" class="image_slides" />
+      <div class="controller_box">
+        <span class="badge" onclick="thisPos(1)"></span>
+        <span class="badge" onclick="thisPos(2)"></span>
+        <span class="badge" onclick="thisPos(3)"></span>
+      </div>
+    </div>
+  </body>
+  <script>
+    let slideIndex = 0;
+    const images = document.querySelectorAll("img.image_slides");
+    const thisPos = (position) => {
+      slideIndex = Number(position) - 1;
+      if (slideIndex > images.length) {
+        slideIndex = 0;
+      }
+      if (slideIndex < 1) {
+        slideIndex = images.length - 1;
+      }
+      for (let img of images) {
+        img.style.display = "none";
+      }
+      images[slideIndex].style.display = "block";
+    };
+  </script>
+</html>
