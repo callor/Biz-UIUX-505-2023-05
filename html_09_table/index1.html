@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        width: 80%;
+        margin: 10px auto;
+      }
+      table.table1 {
+        /* border: 1px solid blue; */
+        /* table 의 cell 과 cell 의 간격 설정 */
+        border-collapse: separate;
+        border-collapse: collapse;
+      }
+
+      table.table1 tr {
+        border-bottom: 1px solid #ddd;
+      }
+      table.table1 td,
+      table.table1 th {
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #eee;
+        text-align: left;
+        margin-left: 5px;
+      }
+
+      table.table2 {
+        /* cell 과 cell 사이의 간격을 유지하고 */
+        border-collapse: separate;
+
+        /* border-collapse 가 separate 일때 cell 간격 조정 */
+        border-spacing: 5px;
+
+        /* table 의 가장 바깥 태두리를 점선으로 */
+        border-style: dashed;
+      }
+
+      table.table2 td,
+      table.table2 th {
+        border: 1px dashed green;
+      }
+
+      table.table3 {
+        border-collapse: collapse;
+      }
+
+      /* tr tag 중에 짝수번째 요소 */
+      table.table3 tr:nth-child(even) {
+        background-color: #aaa;
+      }
+
+      /* tr tag 중에 홀수번째 요소 */
+      table.table3 tr:nth-child(odd) {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="table1">
+      <tr>
+        <th>이름</th>
+        <th>주소</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <table class="table2">
+      <tr>
+        <th>이름</th>
+        <th>주소</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td colspan="2">1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2</td>
+        <td rowspan="2">2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <table class="table3">
+      <tr>
+        <th>이름</th>
+        <th>주소</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+      </tr>
+    </table>
+  </body>
+</html>
